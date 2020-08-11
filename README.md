@@ -296,4 +296,41 @@ tmpfs           100M     0  100M   0% /run/user/1000
 ```
 [vagrant@otuslinux ~]$ sudo mkdir -p /raid/part{1,2,3,4,5}
 ```
+Итог Выполнения
+```
+[vagrant@otuslinux ~]$ lsblk
+NAME      MAJ:MIN RM    SIZE RO TYPE   MOUNTPOINT
+sda         8:0    0     40G  0 disk
+├─sda1      8:1    0     40G  0 part   /
+└─sda2      8:2    0 1023.5K  0 part
+sdb         8:16   0    250M  0 disk
+└─md0       9:0    0    496M  0 raid10
+  ├─md0p1 259:0    0     98M  0 md
+  ├─md0p2 259:1    0     99M  0 md
+  ├─md0p3 259:2    0    100M  0 md
+  ├─md0p4 259:3    0     99M  0 md
+  └─md0p5 259:4    0     98M  0 md
+sdc         8:32   0    250M  0 disk
+└─md0       9:0    0    496M  0 raid10
+  ├─md0p1 259:0    0     98M  0 md
+  ├─md0p2 259:1    0     99M  0 md
+  ├─md0p3 259:2    0    100M  0 md
+  ├─md0p4 259:3    0     99M  0 md
+  └─md0p5 259:4    0     98M  0 md
+sdd         8:48   0    250M  0 disk
+└─md0       9:0    0    496M  0 raid10
+  ├─md0p1 259:0    0     98M  0 md
+  ├─md0p2 259:1    0     99M  0 md
+  ├─md0p3 259:2    0    100M  0 md
+  ├─md0p4 259:3    0     99M  0 md
+  └─md0p5 259:4    0     98M  0 md
+sde         8:64   0    250M  0 disk
+└─md0       9:0    0    496M  0 raid10
+  ├─md0p1 259:0    0     98M  0 md
+  ├─md0p2 259:1    0     99M  0 md
+  ├─md0p3 259:2    0    100M  0 md
+  ├─md0p4 259:3    0     99M  0 md
+  └─md0p5 259:4    0     98M  0 md
+[vagrant@otuslinux ~]$
+```
 5.Vagrantfile, который сразу собирает систему с подключенным рейдом приложен в репозиторий RAID.
